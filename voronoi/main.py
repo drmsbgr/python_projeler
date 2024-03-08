@@ -12,14 +12,14 @@ img = Image.new("RGB", (width, height), (255, 255, 255))
 
 points = []
 
-for p in range(0, randomPointsCount):
+for p in range(randomPointsCount):
     randX = random.randint(0, width - 1)
     randY = random.randint(0, height - 1)
     points.append([randX, randY, int(p / randomPointsCount * 180)])
     img.putpixel((randX, randY), (0, 0, 0))
 
-for x in range(0, width):
-    for y in range(0, height):
+for x in range(width):
+    for y in range(height):
         closestPoint = points[0]
         for p in points:
             if p != closestPoint:
@@ -31,7 +31,9 @@ for x in range(0, width):
                     closestPoint = p
         img.putpixel(
             xy=(x, y),
-            value=ImageColor.getrgb(f"hsv({0}, {0}% , {min(100,int(distToClosest))}%)"),
+            value=ImageColor.getrgb(
+                f"hsv(0, 0% , {min(100, int(distToClosest))}%)"
+            ),
         )
 img.show()
 img.save("voronoi/voronoi_texture.png", "png")
