@@ -1,3 +1,6 @@
+ALPHABET = "abcçdefgğhıijklmnoöprsştuüvyz"
+
+
 def reverse(s):
     return s[::-1]
 
@@ -59,3 +62,19 @@ def remove_all(subs, s):
             i = 0
         i += 1
     return res
+
+
+def get_count_of_alphabet_letters(s: str):
+    countlist = [0 for _ in ALPHABET]
+
+    s = s.lower()
+
+    for l1 in s:
+        for l2 in ALPHABET:
+            if l1 == l2:
+                countlist[ALPHABET.index(l2)] += 1
+
+    return countlist
+
+def is_lower(ch):
+    return ch in ALPHABET

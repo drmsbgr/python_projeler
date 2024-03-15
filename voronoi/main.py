@@ -32,8 +32,8 @@ for x in range(width):
         img.putpixel(
             xy=(x, y),
             value=ImageColor.getrgb(
-                f"hsv(0, 0% , {min(100, int(distToClosest))}%)"
+                f"hsv({min(100, int(distToClosest))}, 100% , 100%)"
             ),
         )
 img.show()
-img.save("voronoi/voronoi_texture.png", "png")
+img.save("voronoi_texture.png", "png")
