@@ -1,7 +1,7 @@
 import stringtools
 
 girdi = input("Bir metin giriniz: ")
-#girdi = "Mississippi"
+# girdi = "Mississippi"
 
 print(f"4.harf ve sonrası: {girdi[3:]}")
 print()
@@ -24,7 +24,7 @@ for i, l in enumerate(stringtools.ALPHABET):
     count = countList[i]
     if count > 0:
         print(f"Metindeki '{l}' harfi adeti: {count}")
-        
+
 
 print()
 

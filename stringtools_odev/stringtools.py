@@ -76,5 +76,6 @@ def get_count_of_alphabet_letters(s: str):
 
     return countlist
 
+
 def is_lower(ch):
     return ch in ALPHABET
