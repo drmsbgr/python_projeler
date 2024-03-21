@@ -2,4 +2,6 @@ voronoi/.venv/*
 numpy_calismalari/.venv/*
 pygame_test/.venv/*
 simulations/.venv/*
+charged_particles_view/.venv/*
+matplot_test/.venv/*
 desktop.ini
