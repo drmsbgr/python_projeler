@@ -34,8 +34,8 @@ while running:
         * (pygame.mouse.get_pos() - ballPose).normalize()
     )
 
-    if ballPose.distance_squared_to(pygame.mouse.get_pos()) <= 100 * 100:
-        force = pygame.Vector2(0, 0)
+    if ballPose.distance_squared_to(pygame.mouse.get_pos()) <= 100 * 100 and force.magnitude() > 0:
+        force = -force
 
     pygame.draw.line(screen, "red", ballPose, ballPose + force)
     pygame.draw.line(screen, "blue", ballPose, ballPose + ballVelocity)
