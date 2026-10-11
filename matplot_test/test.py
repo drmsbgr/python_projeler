@@ -1,14 +1,17 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 
-def dortgen_ciz(startx, starty, width, heigth):
-    # verilen x ve y noktalarına çizgi çizer
-    x = [startx, startx + width, startx + width, startx, startx]
-    y = [starty, starty, starty + heigth, starty + heigth, starty]
-    plt.plot(x, y)
+t = np.linspace(-1, 1, 1024)
+data2d = (
+    t[:, np.newaxis] ** 3 * t[np.newaxis, :] + t[:, np.newaxis] * t[np.newaxis, :] ** 2
+)
+data3 = 5 * np.exp(t[:, np.newaxis] ** 2 + t[np.newaxis, :] ** 2)
 
+fig, ax = plt.subplots()
+im = ax.imshow(data3, cmap="jet")
+ax.set_title("deneme")
 
-dortgen_ciz(5, 5, 10, 2)
-dortgen_ciz(0, 0, 4, 4)
+fig.colorbar(im, ax=ax, label="Interactive colorbar")
 
 plt.show()
